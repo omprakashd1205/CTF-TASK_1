@@ -88,6 +88,8 @@ window.addEventListener("scroll", () => {
     400
   );
   animateElement(document.querySelector(".works_section__title h1"), "animate");
+  animateAllElement(document.querySelectorAll(".project_card"), "animate", 400);
+  animateElement(document.querySelector(".show_more"), "animate");
 });
 
 const showMoreBtn = document.querySelector(".show_more");
@@ -122,13 +124,13 @@ const sampleProjects = [
 // Function to generate HTML for a project card
 const generateProjectCard = (project) => {
   return `
-    <div class="project_card">
+    <div class="project_card animate">
       <div class="project_card__row1">
         <h2>${project.title}</h2>
         <p>${project.description}</p>
       </div>
       <div class="project_card__row2">
-        <span class="row2_circle"></span>${project.technologies}
+        <span class="row2_circle"></span><span>${project.technologies}</span>
       </div>
     </div>
   `;

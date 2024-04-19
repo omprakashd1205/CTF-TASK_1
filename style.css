@@ -479,6 +479,12 @@ header .hero_section {
   border-radius: 6px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.project_card.animate {
+  opacity: 1;
+  animation: slideInFromLeft 0.5s ease-out;
 }
 
 .project_card:hover {
@@ -503,7 +509,7 @@ header .hero_section {
 .project_card__row1 h2::before {
   content: "";
   display: block;
-  width: 100%;
+  width: 70%;
   height: 2px;
   background-color: var(--primary-color);
   /* margin: 10px 0; */
@@ -514,17 +520,17 @@ header .hero_section {
 
 .project_card__row2 {
   display: flex;
-  align-items: start;
+  align-items: baseline;
+  justify-content: center;
   gap: 0 0.5rem;
   width: 100%;
 }
 
 .row2_circle {
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  margin-top: 0.4rem;
 }
 
 .project_card:nth-child(4n + 1) .row2_circle {
@@ -555,7 +561,12 @@ header .hero_section {
   color: var(--text-color);
   font-weight: 500;
   transition: all 0.3s ease;
-  animation: slideInFromTop 0.5s ease both;
+  opacity: 0;
+}
+
+.show_more.animate {
+  opacity: 1;
+  animation: slideInFromBottom 0.5s ease-out;
 }
 
 .show_more:hover {
