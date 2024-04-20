@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="favicon" href="./favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <title>TechOps Solutions</title>
   </head>
   <body>
@@ -53,7 +57,7 @@
 
     <!-- Service Section -->
     <section id="services" class="service_section">
-      <div class="service_section__title">
+      <div id="service_title" class="section__title">
         <h1>
           Services We Offer
           <span
@@ -129,7 +133,7 @@
 
     <!-- Featured Works Section -->
     <section id="works" class="works_section">
-      <div class="works_section__title">
+      <div id="works_title" class="section__title">
         <h1>
           Our Works
           <span
@@ -140,9 +144,11 @@
       </div>
       <div class="works_wrapper">
         <div class="project_card">
-          <div class="project_card__row1">
-            <h2>Kurukshetra'24</h2>
-            <p>
+          <div class="project_content">
+            <h3 class="project_subtitle">Website</h3>
+            <h2 class="project_title">Kurukshetra'24</h2>
+
+            <p class="project_description">
               The website features a modern design, seamless navigation, and
               interactive elements that engage users and showcase the event's
               offerings. Our team worked closely with the organizers to ensure
@@ -151,15 +157,27 @@
               exceeded expectations.
             </p>
           </div>
-          <div class="project_card__row2">
-            <span class="row2_circle"></span
-            ><span> React.js, Express.js, Typescript, PostgreSQL </span>
+
+          <div class="project_buttons">
+            <div class="project_techstack">
+              <i class="ri-stack-line"></i>React.js, Express.js, Typescript
+            </div>
+
+            <a
+              href="https://kurukshetraceg.org.in/"
+              target="_blank"
+              class="project_techstack"
+            >
+              <i class="ri-links-line"></i> View
+            </a>
           </div>
         </div>
         <div class="project_card">
-          <div class="project_card__row1">
-            <h2>Sherlock & Watson</h2>
-            <p>
+          <div class="project_content">
+            <h3 class="project_subtitle">Website</h3>
+            <h2 class="project_title">Sherlock&Watson</h2>
+
+            <p class="project_description">
               Sherlock & Watson is a web application that allows users to
               collaborate on solving complex cases and mysteries. Our team
               developed the platform with a focus on user engagement, real-time
@@ -167,33 +185,57 @@
               interactive experience for users.
             </p>
           </div>
-          <div class="project_card__row2">
-            <span class="row2_circle"></span
-            ><span> React.js, Express.js, Typescript, PostgreSQL </span>
+
+          <div class="project_buttons">
+            <div class="project_techstack">
+              <i class="ri-stack-line"></i>React.js, Express.js, Typescript
+            </div>
+
+            <a
+              href="https://sherlock.kurukshetraceg.org.in/"
+              target="_blank"
+              class="project_techstack"
+            >
+              <i class="ri-links-line"></i> View
+            </a>
           </div>
         </div>
         <div class="project_card">
-          <div class="project_card__row1">
-            <h2>CTF Projects</h2>
-            <p>
+          <div class="project_content">
+            <h3 class="project_subtitle">Website</h3>
+            <h2 class="project_title">CTF Projects</h2>
+
+            <p class="project_description">
               Our team developed the CTF Projects site, a platform that
               showcases the projects created by the students of Anna University,
               Chennai. The site features a clean and intuitive interface that
               allows users to explore the projects, view details, and interact
               with the creators. With a focus on user experience and
               functionality, the CTF Projects site has become a valuable
-              resource
+              resource.
             </p>
           </div>
-          <div class="project_card__row2">
-            <span class="row2_circle"></span
-            ><span>React.js, Framer Motion</span>
+
+          <div class="project_buttons">
+            <div class="project_techstack">
+              <i class="ri-stack-line"></i>React.js, Express.js, Typescript
+            </div>
+
+            <a
+              href="https://www.projects.cegtechforum.in/"
+              target="_blank"
+              class="project_techstack"
+            >
+              <i class="ri-links-line"></i> View
+            </a>
           </div>
         </div>
         <div class="project_card">
-          <div class="project_card__row1">
-            <h2>QR Application</h2>
-            <p>
+          <div class="project_content">
+            <h3 class="project_subtitle">App</h3>
+            <h2 class="project_title">QR Application</h2>
+
+            <p class="project_description">
               This app allows the K'24 organizers to scan the QR codes of
               participants to verify if they have registered and paid for the
               event. This app automates the process of verifying participants'
@@ -202,8 +244,19 @@
               on the device as a CSV file.
             </p>
           </div>
-          <div class="project_card__row2">
-            <span class="row2_circle"></span><span>Flutter</span>
+
+          <div class="project_buttons">
+            <div class="project_techstack">
+              <i class="ri-stack-line"></i>React.js, Express.js, Typescript
+            </div>
+
+            <a
+              href="https://kurukshetraceg.org.in/"
+              target="_blank"
+              class="project_techstack project_link__hide"
+            >
+              <i class="ri-links-line"></i> View
+            </a>
           </div>
         </div>
       </div>
@@ -211,6 +264,66 @@
     </section>
 
     <!-- Tech Stack Showcase Section -->
+    <section id="techstack" class="techstack_section">
+      <div id="techstack_title" class="section__title">
+        <h1>
+          Tech Stack
+          <span
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
+            doloribus.</span
+          >
+        </h1>
+      </div>
+      <div class="techstack_wrapper">
+        <div class="techstack_card" id="frontend">
+          <h2><i class="ri-pencil-ruler-2-line"></i>Frontend</h2>
+          <ul>
+            <li>React.js</li>
+            <li>Vue.js</li>
+            <li>Angular</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Sass</li>
+            <li>Bootstrap</li>
+          </ul>
+        </div>
+        <div class="techstack_card" id="backend">
+          <h2><i class="ri-database-2-line"></i>Backend</h2>
+          <ul>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>Flask</li>
+            <li>Java</li>
+            <li>Spring Boot</li>
+          </ul>
+        </div>
+        <div class="techstack_card" id="mobile">
+          <h2><i class="ri-smartphone-line"></i>Mobile</h2>
+          <ul>
+            <li>React Native</li>
+            <li>Flutter</li>
+            <li>Swift</li>
+            <li>Kotlin</li>
+            <li>Java</li>
+            <li>Objective-C</li>
+          </ul>
+        </div>
+        <div class="techstack_card" id="uiux">
+          <h2><i class="ri-quill-pen-line"></i>UI/UX</h2>
+          <ul>
+            <li>Figma</li>
+            <li>Adobe XD</li>
+            <li>Sketch</li>
+            <li>InVision</li>
+            <li>Zeplin</li>
+            <li>Marvel</li>
+            <li>Principle</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <!-- Testimonials Section -->
 
