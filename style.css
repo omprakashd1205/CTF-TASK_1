@@ -709,8 +709,10 @@ header .hero_section {
   align-items: center;
   gap: 20px;
   width: 100%;
+  height: max-content;
   padding: 20px;
-  margin: 20px 0;
+  padding-top: 0;
+  margin-bottom: 20px;
   overflow: hidden;
   opacity: 0;
 }
@@ -726,18 +728,19 @@ header .hero_section {
   position: relative;
   gap: 20px;
   width: 50%;
-  height: 380px;
-  padding: 20px;
+  min-height: 220px;
+  max-height: 380px;
+  padding: 0 20px;
   margin: 20px 0;
   overflow: hidden;
 }
 
 /* TESTIMONIAL STYLINGS */
 .testimonial {
+  height: fit-content;
   position: absolute;
   top: 0;
   left: 0;
-  grid-column: span 1;
   margin: 15px 10px 0;
   padding: 10px 20px 5px;
   background: var(--background-color);
@@ -827,6 +830,152 @@ header .hero_section {
 
 .next_btn {
   right: 20%;
+}
+
+/* ---------------- FOOTER SECTION CSS ---------------- */
+/* FOOTER SECTION */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  border-top: 2px solid var(--primary-color);
+}
+
+/* FOOTER WRAPPER */
+.footer_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+/* FOOTER LOGO */
+.footer_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.footer_logo img {
+  height: 50px;
+  width: 50px;
+}
+
+.footer_title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* CONTACT DETAILS */
+.footer_contact {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0 1rem;
+}
+
+.footer_contact > p {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.footer_contact .contact_details {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  padding: 10px 0;
+}
+
+.footer_contact .contact_details a {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+  color: var(--text-color);
+}
+
+.footer_contact .contact_details i {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+/* QUICK LINKS */
+.footer_links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1rem;
+}
+
+.footer_links p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.footer_links .links {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0 1rem;
+}
+
+.footer_links a {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.footer_links a:hover {
+  color: var(--primary-color);
+}
+
+/* FOOTER BOTTOM */
+.footer_rest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 1rem;
+  width: 100%;
+  border-top: 2px solid var(--primary-color);
+  padding: 10px;
+}
+
+/* SOCIAL LINKS */
+.footer_socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1rem;
+}
+
+.footer_socials a {
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.footer_socials a:hover {
+  color: var(--primary-color);
+}
+
+/* COPYRIGHTS */
+.footer_rest .footer_copy {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
 }
 
 /* ---------------- KEYFRAMES ---------------- */

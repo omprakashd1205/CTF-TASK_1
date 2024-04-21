@@ -87,7 +87,8 @@
   /* TESTIMONIAL CAROUSEL */
   .testimonial_carousel {
     width: 100%;
-    height: 450px;
+    min-height: 250px;
+    max-height: 450px;
   }
 
   /* CAROUSEL BUTTONS */
@@ -183,6 +184,37 @@
   .prev_btn,
   .next_btn {
     top: 20%;
+  }
+
+  /* FOOTER STYLINGS */
+  .footer_wrapper {
+    padding: 0 15px;
+    justify-content: normal;
+  }
+
+  .footer_logo {
+    margin: 0;
+  }
+
+  .footer_contact {
+    padding: 0 15px;
+  }
+
+  .footer_contact .contact_details {
+    flex-direction: column;
+  }
+
+  .footer_links {
+    padding: 0 15px;
+  }
+
+  .footer_rest {
+    flex-direction: column;
+  }
+
+  .footer_rest .footer_copy {
+    padding: 0 15px;
+    font-size: 0.75rem;
   }
 }
 
