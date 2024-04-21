@@ -1,12 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
-:root {
-  --primary-color: #667eea;
-  --secondary-color: #4299e1;
-  --text-color: #131418;
-  --background-color: #f2f5f7;
-}
+@import "./variables.css";
 
+/* ---------------- SCROLL BAR CSS ---------------- */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -51,7 +47,12 @@ a {
   text-decoration: none;
 }
 
-/* NAVBAR STYLINGS */
+ul li {
+  list-style: none;
+}
+
+/* ---------------- NAVBAR CSS ---------------- */
+/* NAVBAR */
 nav {
   height: 4rem;
   width: 100vw;
@@ -63,7 +64,7 @@ nav {
   z-index: 10;
   animation: slideInFromTop 0.8s ease-out forwards;
 }
-
+/* ENTRY ANIMATION */
 nav.scrollAnimation {
   animation: navScrollAnimation 0.5s ease-out;
 }
@@ -90,7 +91,6 @@ nav.scrollAnimation {
 
 /* NAV LINKS */
 .nav_links {
-  list-style: none;
   padding: 0 1vw 0 0.7vw;
   display: flex;
   align-items: center;
@@ -166,6 +166,7 @@ nav.scrollAnimation {
   transform: rotate(45deg) translate(-5px, -5px);
 }
 
+/* ---------------- HEADER SECTION CSS ---------------- */
 /* HEADER STYLINGS */
 header {
   display: flex;
@@ -272,6 +273,7 @@ header .hero_section {
   transform: translateY(-50%) translateX(100%);
 }
 
+/* ---------------- SECTION TITLE CSS ---------------- */
 /* SECTION TITLE */
 .section__title {
   display: flex;
@@ -291,6 +293,7 @@ header .hero_section {
   transition: opacity 0.6s ease, transform 0.5s ease;
 }
 
+/* TITLE ENTRY ANIMATION */
 #service_title h1.animate {
   opacity: 1;
   transform: translateY(0);
@@ -331,6 +334,7 @@ header .hero_section {
   line-height: 2em;
 }
 
+/* ---------------- SERVICE SECTION CSS ---------------- */
 /* SERVICE SECTION */
 .service_section {
   display: grid;
@@ -354,6 +358,7 @@ header .hero_section {
   opacity: 0;
 }
 
+/* ENTRY ANIMATION */
 .accordion_panel.animate {
   opacity: 1;
   animation: slideInFromRight 0.5s ease-out;
@@ -398,7 +403,7 @@ header .hero_section {
 }
 
 /* ACTIVE ACCORDION MINUS SIGN */
-.active:after {
+.accordion.active:after {
   content: "\2212";
 }
 
@@ -422,7 +427,8 @@ header .hero_section {
   opacity: 1;
 }
 
-/* WORKS SECTION */
+/* ---------------- OUR WORKS SECTION CSS ---------------- */
+/* OUR WORKS SECTION */
 .works_section {
   display: flex;
   flex-direction: column;
@@ -456,6 +462,7 @@ header .hero_section {
   transition: all 0.5s ease;
 }
 
+/* ENTRY ANIMATION */
 .project_card.animate {
   opacity: 1;
   animation: slideInFromLeft 0.5s ease-out;
@@ -552,6 +559,7 @@ header .hero_section {
   opacity: 0;
 }
 
+/* ENTRY ANIMATION */
 .show_more.animate {
   opacity: 1;
   animation: slideInFromBottom 0.5s ease-out;
@@ -563,6 +571,7 @@ header .hero_section {
   background-color: var(--primary-color);
 }
 
+/* ---------------- TECH STACK SECTION CSS ---------------- */
 /* TECH STACK SECTION */
 .techstack_section {
   display: flex;
@@ -575,7 +584,8 @@ header .hero_section {
 /* TECH STACK WRAPPER */
 .techstack_wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
   gap: 20px;
   width: 100%;
   padding: 20px;
@@ -585,13 +595,14 @@ header .hero_section {
 
 .techstack_card {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   perspective: 1000px;
   opacity: 0;
   transition: all 0.5s ease;
 }
 
+/* ENTRY ANIMATION */
 .techstack_card.animate {
   opacity: 1;
   animation: slideInFromRight 0.5s ease-out;
@@ -600,11 +611,11 @@ header .hero_section {
 .techstack_image,
 .techstack_names {
   background-color: #ffffff;
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   border: 3px solid var(--text-color);
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 14px;
   padding: 1rem;
   position: absolute;
   top: 0;
@@ -680,6 +691,7 @@ header .hero_section {
   transform: rotateY(0deg);
 }
 
+/* ---------------- TESTIMONIAL SECTION CSS ---------------- */
 /* TESTIMONIAL SECTION */
 .testimonial_section {
   display: flex;
@@ -689,151 +701,135 @@ header .hero_section {
   padding: 2rem 3rem;
 }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-  /* NAVBAR STYLINGS */
-  nav {
-    position: fixed;
-    z-index: 3;
-  }
-
-  /* HAMBURGER ICON */
-  .hamburger {
-    display: block;
-    position: absolute;
-    cursor: pointer;
-    right: 1.5%;
-    top: 50%;
-    transform: translate(-5%, -50%);
-    z-index: 2;
-    transition: all 0.7s ease;
-  }
-
-  /* NAV LINKS */
-  .nav_links {
-    position: fixed;
-    background: var(--text-color);
-    height: 100vh;
-    width: 100%;
-    justify-content: space-evenly;
-    flex-direction: column;
-    clip-path: circle(50px at 90% -20%);
-    -webkit-clip-path: circle(50px at 90% -10%);
-    transition: all 1s ease-out;
-    pointer-events: none;
-  }
-
-  .nav_links.open {
-    clip-path: circle(1000px at 90% -10%);
-    -webkit-clip-path: circle(1000px at 90% -10%);
-    pointer-events: all;
-  }
-
-  .nav_links li {
-    opacity: 0;
-  }
-
-  .nav_links li a {
-    font-size: 1.5rem;
-    color: var(--background-color);
-  }
-
-  .nav_links li a:hover {
-    color: var(--primary-color);
-  }
-
-  .nav_links li a::after,
-  .nav_links li a::before {
-    background-color: var(--primary-color);
-  }
-
-  .nav_links li:nth-child(1) {
-    transition: all 0.5s ease 0.2s;
-  }
-
-  .nav_links li:nth-child(2) {
-    transition: all 0.5s ease 0.4s;
-  }
-
-  .nav_links li:nth-child(3) {
-    transition: all 0.5s ease 0.6s;
-  }
-
-  .nav_links li:nth-child(4) {
-    transition: all 0.5s ease 0.8s;
-  }
-
-  .nav_links li:nth-child(5) {
-    transition: all 0.5s ease 1s;
-  }
-
-  li.fade {
-    opacity: 1;
-  }
+/* TESTIMONIAL WRAPPER */
+.testimonial_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0;
+  overflow: hidden;
+  opacity: 0;
 }
 
-@media screen and (max-width: 646px) {
-  /* HEADER STYLINGS */
-  header {
-    height: fit-content;
-    overflow-x: hidden;
-    padding: 1rem 0 4rem 0;
-  }
-
-  /* HERO SECTION */
-  header .hero_section {
-    margin-top: 5rem;
-    grid-template-rows: 6fr 1fr 6fr;
-  }
-
-  /* HERO-LEFT */
-  .hero__left {
-    grid-area: 1 / 1 / 3 / 4;
-    padding: 30px;
-  }
-
-  /* HERO-RIGHT */
-  .hero__right {
-    grid-area: 2 / 1 / 4 / 4;
-  }
-
-  /* SERVICE SECTION  */
-  .service_section {
-    padding: 0 10px;
-  }
-
-  .service_section__title h1 {
-    font-size: 35px;
-  }
-
-  .service_section__title h1 span {
-    margin: 10px 0;
-    line-height: normal;
-  }
-
-  /* ACCORDION */
-  .accordion {
-    font-size: 1.2rem;
-    padding: 20px;
-  }
-
-  .works_section {
-    padding: 5rem 10px;
-  }
-
-  .works_wrapper {
-    padding: 0;
-  }
-
-  .techstack_section {
-    padding: 0 10px;
-  }
-
-  .techstack_wrapper {
-    padding: 0;
-  }
+/* ENTRY ANIMATION */
+.testimonial_wrapper.animate {
+  opacity: 1;
+  animation: scaleUp 0.5s ease-out;
 }
 
+/* TESTIMONIAL CAROUSEL */
+.testimonial_carousel {
+  position: relative;
+  gap: 20px;
+  width: 50%;
+  height: 380px;
+  padding: 20px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+/* TESTIMONIAL STYLINGS */
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  grid-column: span 1;
+  margin: 15px 10px 0;
+  padding: 10px 20px 5px;
+  background: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  opacity: 0;
+}
+
+.testimonial blockquote {
+  margin: 0 10px;
+  background: var(--background-color);
+  padding: 20px 60px;
+  position: relative;
+  border: none;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.testimonial blockquote:before,
+.testimonial blockquote:after {
+  position: absolute;
+  font-size: 80px;
+  line-height: 1;
+  color: var(--primary-color);
+  font-style: normal;
+}
+
+.testimonial blockquote:before {
+  content: "\201C";
+  top: 0;
+  left: 10px;
+}
+
+.testimonial blockquote:after {
+  content: "\201D";
+  right: 10px;
+  bottom: -0.5em;
+}
+
+.testimonial p {
+  margin: 8px 0 8px 20px;
+  text-align: left;
+  color: var(--text-color);
+}
+
+.testimonial.active_right {
+  opacity: 1;
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.testimonial.active_left {
+  opacity: 1;
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+/* CAROUSEL BUTTONS */
+.prev_btn,
+.next_btn {
+  background: var(--text-color);
+  color: var(--background-color);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 25%;
+}
+
+.prev_btn i,
+.next_btn i {
+  font-size: 1rem;
+  color: var(--background-color);
+}
+
+.prev_btn:hover,
+.next_btn:hover {
+  background: var(--primary-color);
+}
+
+.prev_btn {
+  left: 20%;
+}
+
+.next_btn {
+  right: 20%;
+}
+
+/* ---------------- KEYFRAMES ---------------- */
 @keyframes slideInFromTop {
   0% {
     transform: translateY(-200%);
@@ -887,5 +883,20 @@ header .hero_section {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
