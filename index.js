@@ -177,13 +177,14 @@ window.addEventListener("load", () => {
 
 window.addEventListener("scroll", () => {
   animateElement(document.querySelector("#service_title h1"), "animate");
+  animateElement(document.querySelector("#works_title h1"), "animate");
+  animateElement(document.querySelector("#techstack_title h1"), "animate");
+  animateElement(document.querySelector("#testimonial_title h1"), "animate");
   animateAllElement(
     document.querySelectorAll(".accordion_panel"),
     "animate",
     400
   );
-  animateElement(document.querySelector("#works_title h1"), "animate");
-  animateElement(document.querySelector("#techstack_title h1"), "animate");
   animateAllElement(document.querySelectorAll(".project_card"), "animate", 400);
   animateAllElement(
     document.querySelectorAll(".techstack_card"),

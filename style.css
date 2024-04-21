@@ -306,6 +306,11 @@ header .hero_section {
   transform: translateY(0);
 }
 
+#testimonial_title h1.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section__title h1:before {
   position: absolute;
   left: 0;
@@ -332,7 +337,7 @@ header .hero_section {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   width: 100%;
-  padding: 0 20px;
+  padding: 4rem 20px 2rem 20px;
   margin: 10px 0 20px 0;
   overflow: hidden;
 }
@@ -564,7 +569,7 @@ header .hero_section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 3rem 5rem 3rem;
+  padding: 2rem 3rem 5rem 3rem;
 }
 
 /* TECH STACK WRAPPER */
@@ -579,29 +584,109 @@ header .hero_section {
 }
 
 .techstack_card {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  padding: 10px 20px;
-  background-color: var(--background-color);
-  border: 3px solid var(--text-color);
-  border-radius: 6px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-  transition: all 0.5s ease;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
   opacity: 0;
-}
-
-.techstack_card ul li {
-  list-style: none;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text-color);
+  transition: all 0.5s ease;
 }
 
 .techstack_card.animate {
   opacity: 1;
   animation: slideInFromRight 0.5s ease-out;
+}
+
+.techstack_image,
+.techstack_names {
+  background-color: #ffffff;
+  width: 300px;
+  height: 300px;
+  border: 3px solid var(--text-color);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 24px;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+.techstack_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(0deg);
+}
+
+.techstack_image .image__caption {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.techstack_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.techstack_names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.techstack_names h3 {
+  color: var(--primary-color);
+  position: relative;
+}
+
+.techstack_names h3 i {
+  font-weight: 200;
+  margin-right: 0.125rem;
+}
+
+.techstack_names h3::before {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.techstack_names ul li {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.techstack_card:hover .techstack_image {
+  transform: rotateY(-180deg);
+}
+
+.techstack_card:hover .techstack_names {
+  transform: rotateY(0deg);
+}
+
+/* TESTIMONIAL SECTION */
+.testimonial_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
 }
 
 /* MEDIA QUERIES */
@@ -741,7 +826,7 @@ header .hero_section {
   }
 
   .techstack_section {
-    padding: 5rem 10px;
+    padding: 0 10px;
   }
 
   .techstack_wrapper {
