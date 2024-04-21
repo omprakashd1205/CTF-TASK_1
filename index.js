@@ -47,14 +47,20 @@ acc.forEach((currentAcc) => {
       if (otherAcc !== currentAcc) {
         otherAcc.classList.remove("active");
         otherAcc.nextElementSibling.style.maxHeight = null;
+        otherAcc.nextElementSibling.setAttribute("aria-expanded", "false");
+        otherAcc.nextElementSibling.setAttribute("aria-hidden", "true");
       }
     });
 
     // toggle the current accordion panel
     if (isOpen) {
       panel.style.maxHeight = null;
+      panel.setAttribute("aria-expanded", "false");
+      panel.setAttribute("aria-hidden", "true");
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.setAttribute("aria-expanded", "true");
+      panel.setAttribute("aria-hidden", "false");
     }
   });
 });
@@ -182,7 +188,13 @@ const testimonialCarousel = () => {
   let touchendX = 0;
 
   const showTestimonial = (index, side) => {
-    testimonials.forEach((testimonial) => {
+    testimonials.forEach((testimonial, i) => {
+      const isVisible = i === index;
+      const ariaHidden = isVisible ? "false" : "true";
+      const ariaLabel = isVisible ? "true" : "false";
+
+      testimonial.setAttribute("aria-hidden", ariaHidden);
+      testimonial.setAttribute("aria-label", ariaLabel);
       if (testimonial.classList.contains("active_left"))
         testimonial.classList.remove("active_left");
       if (testimonial.classList.contains("active_right"))
